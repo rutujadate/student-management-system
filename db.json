@@ -1,0 +1,64 @@
+{
+  "StudentDetails": [
+    {
+      "id": "5793",
+      "name": "Rutuja Balasaheb Date",
+      "address": "At post ane",
+      "email": "dateshravani5646@gmail.com",
+      "phonenumber": "08468835980",
+      "dateOfBirth": "2004-12-01",
+      "gender": "Female",
+      "course": "BCA",
+      "year": "TY",
+      "grade": "8.9"
+    },
+    {
+      "id": "1527",
+      "name": "Shravani Gunjal",
+      "address": "At post Belhe",
+      "email": "gunjalshravani@gmail.com",
+      "phonenumber": "56789012",
+      "dateOfBirth": "2005-11-09",
+      "gender": "Female",
+      "course": "BCA",
+      "grade": "8.5",
+      "year": "TY"
+    },
+    {
+      "id": "80e5",
+      "name": "Apeksha",
+      "address": "at post sakori",
+      "email": "apeksha@123",
+      "phonenumber": "1234567890",
+      "dateOfBirth": "2002-01-04",
+      "gender": "Female",
+      "course": "MCS",
+      "grade": "8.9",
+      "year": "SY"
+    },
+    {
+      "id": "1e7c",
+      "name": "Shardul Pawar",
+      "address": "At post Belapur",
+      "email": "shardul@123",
+      "phonenumber": "123443212",
+      "dateOfBirth": "2005-12-11",
+      "gender": "Male",
+      "course": "BCS",
+      "grade": "7.9",
+      "year": "TY"
+    },
+    {
+      "id": "c17a",
+      "name": "Gaurav Pawar",
+      "address": "At post Belapur",
+      "email": "gaurav@123",
+      "phonenumber": "1234567844",
+      "dateOfBirth": "2005-11-06",
+      "gender": "Male",
+      "course": "BCS",
+      "grade": "8.0",
+      "year": "TY"
+    }
+  ]
+}
