@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-
+import "./AddNewStudents.css"
 export default function AddNewStudents() {
 
     const navigate = useNavigate();
@@ -67,7 +67,7 @@ export default function AddNewStudents() {
         // console.log("Name :" + name, "Address :" + address, "Email :" + email, "PHNumber :" + phonenumber, "BOD :" + dateOfBirth,
         //     "Gender :" + gender, "Course :" + dropdown, "Year :" + year);
 
-       console.log(student.dropdown)
+        console.log(student.dropdown)
 
 
         if (id) {
@@ -108,75 +108,79 @@ export default function AddNewStudents() {
 
     // console.log("gender", gender)
     return (
-        <div>
-            <div>
-                <div>
-                    <div>StudentName:</div>
+        <div className="outerBody">
+            <div className="addNewStudentBox">
+                <div className="boxHeading">AddNewStudents</div>
+                <div className="innerBox">
                     <div>
-                        <input type="text" value={student.name} placeholder="Enter Full Name" onChange={handleNameChange} />
+                        <div className="boxContent">StudentName:</div>
+                        <div>
+                            <input type="text" value={student.name} placeholder="Enter Full Name" onChange={handleNameChange} className="newInputFeild" />
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div>StudentAddress:</div>
                     <div>
-                        <input type="text" value={student.address} placeholder="Enter Address" onChange={handleAddressChange} />
+                        <div className="boxContent">StudentAddress:</div>
+                        <div>
+                            <input type="text" value={student.address} placeholder="Enter Address" onChange={handleAddressChange}  className="newInputFeild"  />
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div>Email:</div>
                     <div>
-                        <input type="text" value={student.email} placeholder="Enter Email" onChange={handleEmailChange} />
+                        <div className="boxContent">Email:</div>
+                        <div>
+                            <input type="text" value={student.email} placeholder="Enter Email" onChange={handleEmailChange}  className="newInputFeild" />
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div>PhoneNumber:</div>
                     <div>
-                        <input type="text" value={student.phonenumber} placeholder="Enter Phone NUmber" onChange={handlePhoneNumberChange} />
+                        <div className="boxContent">PhoneNumber:</div>
+                        <div>
+                            <input type="text" value={student.phonenumber} placeholder="Enter Phone NUmber" onChange={handlePhoneNumberChange}  className="newInputFeild" />
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div>Date Of Birth:</div>
                     <div>
-                        <input type="date" value={student.dateOfBirth} placeholder="Enter Date Of Birth" onChange={handleDateOfBirthChange} />
+                        <div className="boxContent">Date Of Birth:</div>
+                        <div>
+                            <input type="date" value={student.dateOfBirth} placeholder="Enter Date Of Birth" onChange={handleDateOfBirthChange}  className="newInputFeild" />
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div>Gender:</div>
                     <div>
+                        <div className="boxContent">Gender:</div>
+                        <div className="radioButtons">
 
-                        <input type="radio" value={"Male"} onChange={handleGenderChange} checked={student.gender === "Male"} />Male
-                        <input type="radio" value={"Female"} onChange={handleGenderChange} checked={student.gender === "Female"} />Female
+                            <div><input type="radio" value={"Male"} onChange={handleGenderChange} checked={student.gender === "Male"}/>Male</div>
+                            <div><input type="radio" value={"Female"} onChange={handleGenderChange} checked={student.gender === "Female"}   />Female</div>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div>Course:</div>
                     <div>
-                        <select value={student.course} onChange={handleDropDownChange} >
-                            <option>BBA</option>
-                            <option>B.Com</option>
-                            <option>BCS</option>
-                            <option>BCA</option>
-                            <option>MCA</option>
-                            <option>MCS</option>
+                        <div className="boxContent">Course:</div>
+                        <div>
+                            <select value={student.course} onChange={handleDropDownChange}  className="newInputFeild"  >
+                                <option ></option>
+                                <option>BBA</option>
+                                <option>B.Com</option>
+                                <option>BCS</option>
+                                <option>BCA</option>
+                                <option>MCA</option>
+                                <option>MCS</option>
 
-                        </select>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div>Year:</div>
                     <div>
-                        <input type="text" value={student.year} onChange={handleYearChange} />
+                        <div className="boxContent">Year:</div>
+                        <div>
+                            <input type="text" value={student.year} onChange={handleYearChange}  placeholder="Enter Year(FY,SY,TY)" className="newInputFeild" />
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div>Grade:</div>
                     <div>
-                        <input type="text" value={student.grade} placeholder="Enter CGPA/SGPA" onChange={handleGradeChange} />
+                        <div className="boxContent">Grade:</div>
+                        <div>
+                            <input type="text" value={student.grade} placeholder="Enter CGPA/SGPA" onChange={handleGradeChange}  className="newInputFeild" />
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <button onClick={handleToSave}>Save</button>
-                    <button onClick={handleToCancel}>Cancel</button>
+                    <div className="footerbutton">
+                        <button onClick={handleToSave} className="saveButton">Save</button>
+                        <button onClick={handleToCancel} className="cancelButton">Cancel</button>
+                    </div>
                 </div>
 
             </div>

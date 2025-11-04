@@ -59,6 +59,30 @@
       "course": "BCS",
       "grade": "8.0",
       "year": "TY"
+    },
+    {
+      "id": "d9f3",
+      "name": "Ayush",
+      "address": "At post Rajuri",
+      "email": "ayush@123",
+      "phonenumber": "2343543210",
+      "dateOfBirth": "2006-11-12",
+      "gender": "Male",
+      "course": "BCS",
+      "grade": "8.9",
+      "year": "SY"
+    },
+    {
+      "id": "4814",
+      "name": "Nitika Kadam",
+      "address": "at post Rajuri",
+      "email": "nitika@1234",
+      "phonenumber": "1234543213",
+      "dateOfBirth": "2002-12-11",
+      "gender": "Female",
+      "course": "MCS",
+      "grade": "9.0",
+      "year": "TY"
     }
   ]
 }

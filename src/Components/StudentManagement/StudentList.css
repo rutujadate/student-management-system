@@ -1,0 +1,70 @@
+.outerBody{
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.studentDetailsBox{
+    border:none;
+    height: 80%;
+    /* font-family: Arial, Helvetica, sans-serif; */
+}
+.studentlistInput{
+    width:50%;
+    padding:5px;
+    color:black;
+    border: 1px solid lightslategray;
+    border-radius: 5px;
+}
+.searchButton{
+    padding: 5px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    font-size: 15px;
+    background-color: black;
+}
+.tableHeading{
+    background-color:black;
+    color:white;
+    
+}
+.buttons{
+    display: flex;
+    gap:20px;
+    padding:5px 10px;
+}
+.editButton{
+    background-color: gray;
+    color:white;
+    font-weight: bold;
+    border:none;
+    border-radius: 8px;
+    /* width:10%; */
+    padding:10px 10px ;
+
+}
+.deleteButton{
+    background-color:red;
+    color:white;
+    font-weight: bold;
+    border:none;
+    border-radius: 8px;
+    /* width:10%; */
+    padding:10px 10px ;
+
+}
+.newButton{
+    background-color:black;
+    color:white;
+    font-weight: bold;
+    border:none;
+    border-radius: 8px;
+    /* width:10%; */
+    padding:10px 10px ;
+    margin-top: 10px;
+}
+
+

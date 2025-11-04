@@ -1,0 +1,63 @@
+.addNewStudentBox{
+    border:1px solid black;
+    width:40%;
+    height: 95%;
+    background-color:#f2f2f2;
+    text-align: center;
+    /* padding:20px 0px; */
+    
+
+}
+.boxHeading{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+.boxContent{
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:600;
+    margin-top: 10px;
+}
+.innerBox{
+    width: 50%;
+    margin: auto;
+}
+.radioButtons{
+    display: flex;
+    gap:40px;
+    justify-content: center;
+    align-items: center;
+}
+.newInputFeild{
+    width:100%;
+    padding:5px;
+    margin-top: 10px;
+}
+.footerbutton{
+    display: flex;
+    justify-content: space-around;
+}
+.saveButton{
+     background-color:green;
+    color:white;
+    font-weight: bold;
+    border:none;
+    border-radius: 8px;
+    /* width:10%; */
+    padding:10px 10px ;
+    margin-top: 10px;
+
+}
+.cancelButton{
+     background-color:red;
+    color:white;
+    font-weight: bold;
+    border:none;
+    border-radius: 8px;
+    /* width:10%; */
+    padding:10px 10px ;
+    margin-top: 10px;
+
+}

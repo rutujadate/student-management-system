@@ -3,14 +3,37 @@ import "./StudentList.css"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 export default function StudentList() {
-    const[search,setSearch]=useState();
+    const [searchText, setSearchText] = useState();
     const [student, setStudent] = useState([]);
     const navigate = useNavigate();
+    const [filteredList, setFilteredList] = useState([]);
 
-    function handleSearchChange(event){
-        setSearch(event.target.value);
+    function handleNewButton() {
+        navigate("/")
 
     }
+
+
+    function handleSearchChange(event) {
+        setSearchText(event.target.value);
+
+    }
+    function handleToSearch() {
+        console.log(student)
+        const filteredList = student.filter((singleElement) => {
+            console.log('singleElement:', singleElement);
+            if (singleElement.name === searchText) {
+                return singleElement;
+            }
+
+
+        });
+        console.log('filteredList:', filteredList);
+        setFilteredList(filteredList);
+
+    }
+
+
 
     useEffect(() => {
         getAllStudentData();
@@ -19,8 +42,10 @@ export default function StudentList() {
     function getAllStudentData() {
         axios.get("http://localhost:4200/StudentDetails")
             .then((response) => {
-                console.log(response.data);
+                // console.log(response.data);
                 setStudent(response.data);
+                setFilteredList(response.data);
+
 
             })
             .catch((error) => {
@@ -34,22 +59,26 @@ export default function StudentList() {
     function handleToDelete(id) {
         axios.delete("http://localhost:4200/StudentDetails/" + id)
             .then((response) => {
-                console.log(response);
+                // console.log(response);
                 getAllStudentData();
             })
             .catch((error) => console.error("Delete error:", error));
 
     }
     return (
-        <div>
-            <div>
+        <div className="outerBody">
+            <div className="studentDetailsBox" >
+                {/* Search button */}
                 <div>
-                    <input type="text" value={search} onChange={handleSearchChange}/>
-                    <button>Search</button>
+                    <input type="text" value={searchText} placeholder="Search Student Details" onChange={handleSearchChange} className="studentlistInput" />
+                    <button onClick={handleToSearch} className="searchButton">
+                        <i class="fa fa-search" aria-hidden="true"></i> Search</button>
                 </div>
 
                 <table border="1">
-                    <tr>
+
+                    {/* table Heading */}
+                    <tr className="tableHeading">
                         <th>Srno.</th>
                         <th>StudentName</th>
                         <th>StudentAddress</th>
@@ -63,8 +92,15 @@ export default function StudentList() {
                         <th>Option</th>
 
                     </tr>
-                    {student.map((singleElement, index) =>
-                        <tr>
+
+                    {/* using map on table row */}
+                    {filteredList.map((singleElement, index) =>
+
+                        <tr
+                            style={{
+                                backgroundColor: index % 2 === 0 ? "#f2f2f2" : "#fff",
+                                color: index % 2 === 0 ? "lightgreen" : "Black" // alternate row colors
+                            }}>
                             <td>{index + 1}</td>
                             <td>{singleElement.name}</td>
                             <td>{singleElement.address}</td>
@@ -75,13 +111,23 @@ export default function StudentList() {
                             <td>{singleElement.course}</td>
                             <td>{singleElement.year}</td>
                             <td>{singleElement.grade}</td>
-                            <td>
-                                <button onClick={() => handleToEdit(singleElement.id)}>Edit</button>
-                                <button onClick={() => handleToDelete(singleElement.id)}>Delete</button>
+
+                            {/* Edit and Delete buttons */}
+                            <td className="buttons">
+                                {/* Edit Button */}
+                                <button onClick={() => handleToEdit(singleElement.id)} className="editButton">
+                                    <i class="fa fa-pencil writingIcon" aria-hidden="true"></i> Edit</button>
+                                {/* Delete Button */}
+                                <button onClick={() => handleToDelete(singleElement.id)} className="deleteButton">
+                                    <i class="fa fa-trash-o writingIcon" aria-hidden="true"></i> Delete</button>
                             </td>
                         </tr>
                     )}
                 </table>
+                <div>
+                    <button onClick={handleNewButton} className="newButton">
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i> Add New Student</button>
+                </div>
             </div>
 
         </div>
